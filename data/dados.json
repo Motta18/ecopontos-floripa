@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "Ecoponto Itacorubi",
+    "tipo": "ecoponto",
+    "endereco": "Rodovia Admar Gonzaga, 72, Florianópolis",
+    "infoAdicional": "Todos os dias, 7h–19h · (48) 3261-4816"
+  },
+  {
+    "nome": "Ecoponto Morro das Pedras",
+    "tipo": "ecoponto",
+    "endereco": "Rua Francisco Vieira, 198, Florianópolis",
+    "infoAdicional": "Todos os dias, 7h–12h e 13h–18h30 · (48) 3338-4506 · Em frente à Padaria Moreira"
+  },
+  {
+    "nome": "Ecoponto Canasvieiras",
+    "tipo": "ecoponto",
+    "endereco": "Rua Desembargador Maurílio Coimbra, Florianópolis",
+    "infoAdicional": "Seg–sex 7h30–12h e 13h–17h30 · Sáb 7h30–11h30 · Fechado dom/feriados · (48) 3266-1445 · Próximo ao campo da Amocan"
+  },
+  {
+    "nome": "Ecoponto Capoeiras",
+    "tipo": "ecoponto",
+    "endereco": "Rua Professor Egídio Ferreira, Florianópolis",
+    "infoAdicional": "Todos os dias, 7h–11h50 e 13h–19h · Ao lado do Terminal de Capoeiras · Não recebe gesso nem amianto"
+  },
+  {
+    "nome": "Ecoponto Monte Cristo",
+    "tipo": "ecoponto",
+    "endereco": "Rua Joaquim Nabuco, Monte Cristo, Florianópolis",
+    "infoAdicional": "Todos os dias, 7h–19h · Ao lado da ARESP · Não recebe poda nem pneus"
+  },
+  {
+    "nome": "Ecoponto Rio Vermelho",
+    "tipo": "ecoponto",
+    "endereco": "Rua Cândido Pereira dos Anjos, Florianópolis",
+    "infoAdicional": "Todos os dias, 7h–11h50 e 13h–19h"
+  },
+  {
+    "nome": "Ecoponto Ingleses",
+    "tipo": "ecoponto",
+    "endereco": "Rua Via Local Insular, Florianópolis",
+    "latitude": -27.4334996,
+    "longitude": -48.4085363,
+    "infoAdicional": "Todos os dias, 7h–12h e 13h–19h · Atrás da subestação da CELESC"
+  },
+  {
+    "nome": "Ecoponto Costeira",
+    "tipo": "ecoponto",
+    "endereco": "Avenida Jorge Lacerda, 1374, Florianópolis",
+    "infoAdicional": "Todos os dias, 7h–11h50 e 13h–19h · Ao lado do NEIM Costeira"
+  },
+  {
+    "nome": "Ecoponto Coloninha",
+    "tipo": "ecoponto",
+    "endereco": "Rua Araci Vaz Callado, 2000, Florianópolis",
+    "infoAdicional": "Todos os dias, 7h–11h50 e 13h–19h"
+  }
+]

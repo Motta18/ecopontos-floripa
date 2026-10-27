@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encontre ecopontos em Florianópolis.">
+  <title>Ecopontos Floripa | Mapa</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  >
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <a class="marca" href="./" aria-label="Ecopontos Floripa, início">
+      <span class="marca__icone" aria-hidden="true">♻</span>
+      <span>Ecopontos <strong>Floripa</strong></span>
+    </a>
+    <p>Descarte consciente perto de você</p>
+  </header>
+
+  <main class="pagina">
+    <section class="introducao" aria-labelledby="titulo">
+      <div>
+        <p class="sobretitulo">FLORIANÓPOLIS, SC</p>
+        <h1 id="titulo">Encontre um ecoponto</h1>
+        <p class="introducao__texto">Pesquise um endereço ou explore os pontos de coleta no mapa.</p>
+      </div>
+      <form id="form-busca" class="busca" role="search">
+        <label class="visualmente-oculto" for="endereco">Endereço para localizar no mapa</label>
+        <input
+          id="endereco"
+          name="endereco"
+          type="search"
+          placeholder="Ex.: Centro, Florianópolis"
+          autocomplete="street-address"
+          required
+        >
+        <button type="submit">Buscar</button>
+      </form>
+    </section>
+
+    <section class="barra-status" aria-label="Estado dos ecopontos">
+      <p id="mensagem" class="mensagem" role="status" aria-live="polite">Carregando ecopontos...</p>
+      <button id="atualizar" class="botao-atualizar" type="button">Atualizar pontos</button>
+    </section>
+
+    <section class="painel" aria-label="Mapa e lista de ecopontos">
+      <div id="mapa" class="mapa" role="region" aria-label="Mapa de ecopontos de Florianópolis"></div>
+      <aside class="lista-painel" aria-labelledby="titulo-lista">
+        <div class="lista-painel__cabecalho">
+          <h2 id="titulo-lista">Pontos de coleta</h2>
+          <span id="total-pontos" class="contador" aria-label="Quantidade de pontos">0</span>
+        </div>
+        <ul id="lista-pontos" class="lista-pontos"></ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Os dados dos mapas são © OpenStreetMap contributors.</p>
+  </footer>
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

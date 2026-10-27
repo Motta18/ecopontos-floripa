@@ -1,0 +1,667 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #19352b;
+  background: #f4f7f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --verde: #16734a;
+  --verde-escuro: #105538;
+  --borda: #dce6df;
+  --texto-suave: #61746a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px max(24px, calc((100% - 1280px) / 2));
+  background: #fff;
+  border-bottom: 1px solid var(--borda);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.marca strong {
+  color: var(--verde);
+}
+
+.marca__icone {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 11px;
+  color: #fff;
+  background: var(--verde);
+  font-size: 1.35rem;
+}
+
+.cabecalho p,
+.rodape p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.pagina {
+  width: min(1280px, calc(100% - 48px));
+  margin: 48px auto 32px;
+}
+
+.introducao {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.sobretitulo {
+  margin: 0 0 8px;
+  color: var(--verde);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  letter-spacing: -0.04em;
+}
+
+.introducao__texto {
+  margin-bottom: 0;
+  color: var(--texto-suave);
+}
+
+.busca {
+  display: flex;
+  width: min(440px, 100%);
+  gap: 8px;
+}
+
+.busca input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+}
+
+.busca input:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px rgb(22 115 74 / 12%);
+}
+
+.busca button,
+.botao-ponto {
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--verde);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.busca button {
+  padding: 0 20px;
+}
+
+.busca button:hover,
+.botao-ponto:hover {
+  background: var(--verde-escuro);
+}
+
+.leaflet-tooltip-tipo {
+  font-weight: 600;
+}
+
+.busca button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.mensagem {
+  min-height: 24px;
+  margin: 0 0 12px;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.mensagem--erro {
+  color: #a33131;
+}
+
+.barra-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.mensagem {
+  margin-bottom: 0;
+}
+
+.botao-atualizar {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  color: var(--verde-escuro);
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.botao-atualizar:hover {
+  border-color: var(--verde);
+  background: #f3faf5;
+}
+
+.botao-atualizar:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.painel {
+  display: grid;
+  min-height: 560px;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  overflow: hidden;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgb(27 63 43 / 6%);
+}
+
+.mapa {
+  min-height: 560px;
+  background: #e8eee9;
+}
+
+.lista-painel {
+  min-width: 0;
+  border-left: 1px solid var(--borda);
+}
+
+.lista-painel__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.lista-painel h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.contador {
+  display: grid;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 7px;
+  place-items: center;
+  border-radius: 20px;
+  color: var(--verde-escuro);
+  background: #e8f4ed;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.lista-pontos {
+  max-height: 500px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.item-ponto {
+  padding: 18px 20px;
+  border-bottom: 1px solid #edf1ee;
+}
+
+.item-ponto h3 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+}
+
+.item-ponto p {
+  margin: 0 0 12px;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.botao-ponto {
+  padding: 8px 11px;
+  font-size: 0.8rem;
+}
+
+.lista-vazia {
+  padding: 20px;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.aviso-geocode {
+  color: #e65100;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.rodape {
+  padding: 18px 24px 24px;
+  text-align: center;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 800px) {
+  .pagina {
+    margin-top: 32px;
+  }
+
+  .introducao {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .busca {
+    width: 100%;
+  }
+
+  .painel {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa {
+    min-height: 430px;
+  }
+
+  .lista-painel {
+    border-top: 1px solid var(--borda);
+    border-left: 0;
+  }
+
+  .lista-pontos {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cabecalho {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .cabecalho p {
+    max-width: 120px;
+    text-align: right;
+    font-size: 0.8rem;
+  }
+
+  .pagina {
+    width: calc(100% - 32px);
+    margin-top: 26px;
+  }
+
+  .barra-status {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mapa {
+    min-height: 360px;
+  }
+}
+
+/* Popup de ecoponto */
+.popup-ecoponto {
+  max-width: 240px;
+  padding: 8px;
+  color: #222;
+  font-size: 13px;
+}
+
+.popup-ecoponto strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+/* Badges de tipo */
+.popup-badge {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eee;
+  color: #333;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.popup-badge--ecoponto {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.popup-badge--reciclavel {
+  background: #bbdefb;
+  color: #0d47a1;
+}
+
+/* contraste AA ~6,7:1 */
+.popup-badge--pilhas {
+  background: #fff9c4;
+  color: #7a4f00;
+}
+
+.popup-badge--eletronicos {
+  background: #e1bee7;
+  color: #4a148c;
+}
+
+.popup-badge--oleo {
+  background: #ffccbc;
+  color: #bf360c;
+}
+
+.popup-badge--vidro {
+  background: #b2dfdb;
+  color: #004d40;
+}
+
+.popup-badge--papel {
+  background: #d7ccc8;
+  color: #3e2723;
+}
+
+/* contraste AA ~7,5:1 */
+.popup-badge--plastico {
+  background: #ffe0b2;
+  color: #7a2e00;
+}
+
+.popup-badge--default {
+  background: #eee;
+  color: #424242;
+}
+
+/* Endereço e informações do popup */
+.popup-endereco,
+.popup-info {
+  margin: 6px 0 0;
+  color: #444;
+  font-size: 12px;
+}
+
+/* Link para rotas */
+.popup-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #1565c0;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.popup-link:hover {
+  color: #0d47a1;
+  text-decoration: none;
+}
+
+/* Popup de busca */
+.popup-busca strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.popup-busca p {
+  margin: 4px 0;
+  color: #555;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+/* Ícones dos marcadores */
+.icone-mapa {
+  background-color: #2e7d32 !important;
+  border: 2px solid #ffffff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-mapa--pilhas {
+  border-color: #f9a825;
+}
+
+.icone-mapa--eletronicos {
+  border-color: #6a1b9a;
+}
+
+.icone-mapa--oleo {
+  border-color: #bf360c;
+}
+
+.icone-mapa--vidro {
+  border-color: #00897b;
+}
+
+.icone-mapa--papel {
+  border-color: #6d4c41;
+}
+
+.icone-mapa--plastico {
+  border-color: #ef6c00;
+}
+
+.icone-mapa--reciclavel {
+  border-color: #1565c0;
+}
+
+.icone-mapa--default {
+  border-color: #757575;
+}
+
+/* Aviso de geocodificação */
+.aviso-geocode {
+  color: #b71c1c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Status de funcionamento */
+.popup-status--aberto,
+.popup-status--fechado {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+.popup-status--aberto {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.popup-status--fechado {
+  background: #ffcdd2;
+  color: #b71c1c;
+}
+
+/* Legenda do mapa */
+.legenda-mapa {
+  min-width: 165px;
+  padding: 10px 12px;
+  border: 1px solid #dce6df;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 25%);
+  color: #19352b;
+  font-size: 12px;
+}
+
+.legenda-mapa strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.legenda-mapa ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legenda-mapa li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legenda-cor {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  border: 1px solid rgb(0 0 0 / 15%);
+  border-radius: 3px;
+}
+
+.legenda-cor--ecoponto {
+  background: #c8e6c9;
+}
+
+.legenda-cor--reciclavel {
+  background: #bbdefb;
+}
+
+.legenda-cor--pilhas {
+  background: #fff9c4;
+}
+
+.legenda-cor--eletronicos {
+  background: #e1bee7;
+}
+
+.legenda-cor--oleo {
+  background: #ffccbc;
+}
+
+.legenda-cor--vidro {
+  background: #b2dfdb;
+}
+
+.legenda-cor--papel {
+  background: #d7ccc8;
+}
+
+.legenda-cor--plastico {
+  background: #ffe0b2;
+}
+
+.legenda-cor--default {
+  background: #eeeeee;
+}
+
+/* Filtros da lista de ecopontos */
+.painel-filtros {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--borda);
+  background: #fbfdfb;
+}
+
+.painel-filtros__cabecalho {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.painel-filtros__cabecalho strong {
+  font-size: 0.85rem;
+}
+
+.filtro-resumo {
+  color: var(--texto-suave);
+  font-size: 0.72rem;
+  text-align: right;
+}
+
+.painel-filtros__opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.painel-filtros label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #355247;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.painel-filtros input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: var(--verde);
+}
